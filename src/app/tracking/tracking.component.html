@@ -1,0 +1,105 @@
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<script>
+  if (localStorage.session == 'logged') {
+    document.getElementById('logged').innerHTML = "<button>Log out</button>"
+  }
+</script>
+<body>
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-left">
+      <a routerLink="/homepage"><img class="rpgLogo" src="../assets/dashboard/rpgLogo2.png" alt="RPGains"></a>
+    </div>
+    <div class="nav navbar-expand-lg" id="myNavbar">
+      <ul id="pages" class="nav navbar-nav navbar-right">
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/tracking">Track</a></li>
+        <li><a routerLink="/inventory">Customize</a></li>
+        <li><a routerLink="/loot">Loot</a></li>
+        <li><a routerLink="/api">Google Fit </a></li>
+        <!-- Due to issues with a inconsistent auth service, users have to redirect to the home page in order to log out-->
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> To Home/Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="col-sm-3 track">
+    <form (submit)="submitTrack()">
+      <div class="form-group">
+        <label for="weight">Weight</label>
+        <input type="text" class="form-control" id="weight" [(ngModel)]="formWeight" name="weight">
+      </div>
+      <div class="form-group">
+        <label for="bench">Bench</label>
+        <input type="text" class="form-control" id="bench" [(ngModel)]="formBench" name="bench">
+      </div>
+      <div class="form-group">
+        <label for="squat">Squat</label>
+        <input type="text" class="form-control" id="squat" [(ngModel)]="formSquat" name="squat">
+      </div>
+      <div class="form-group">
+        <label for="curl">Curl</label>
+        <input type="text" class="form-control" id="curl" [(ngModel)]="formCurl" name="curl">
+      </div>
+      <div class="form-group">
+        <label for="calories">Calories</label>
+        <input type="text" class="form-control" id="calories" [(ngModel)]="formCalorie" name="calories">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+  <div class="col-sm-1 blank">
+
+  </div>
+
+  <mat-tab-group class="tabgroup">
+    <mat-tab label="Weight">
+      <div class="col-sm-8 graph">
+        <google-chart [data]="weight"></google-chart>
+      </div>
+    </mat-tab>
+    <mat-tab label="Bench">
+      <div class="col-sm-8 graph">
+        <google-chart [data]="bench"></google-chart>
+      </div>
+    </mat-tab>
+    <mat-tab label="Squat">
+      <div class="col-sm-8 graph">
+        <google-chart [data]="squat"></google-chart>
+      </div>
+    </mat-tab>
+    <mat-tab label="Curl">
+      <div class="col-sm-8 graph">
+        <google-chart [data]="curl"></google-chart>
+      </div>
+    </mat-tab>
+    <mat-tab label="Calories">
+      <div class="col-sm-8 graph">
+        <google-chart [data]="calorie"></google-chart>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>
+
+<div class="container-fluid">
+  <div class="col-sm-3 blank">
+
+  </div>
+  <div class="col-sm-2 blank">
+
+  </div>
+</div>
+</body>

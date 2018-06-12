@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-left">
+      <a routerLink="/homepage"><img class="rpgLogo" src="../assets/dashboard/rpgLogo2.png" alt="RPGains"></a>
+    </div>
+    <div class="nav navbar-expand-lg" id="myNavbar">
+      <ul id="pages" class="nav navbar-nav navbar-right">
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/tracking">Track</a></li>
+        <li><a routerLink="/inventory">Customize</a></li>
+        <li><a routerLink="/loot">Loot</a></li>
+        <li><a routerLink="/api">Google Fit </a></li>
+        <!-- Due to issues with a inconsistent auth service, users have to redirect to the home page in order to log out-->
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> To Home/Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="col-sm-2 blank">
+  </div>
+  <img src="../../assets/loot/token.png" class="token"> {{tokens}}
+  <div class="col-sm-8 blank">
+  <div class="showloot" *ngIf="tokens != 0">
+    <div class="col-sm-2 blank">
+    </div>
+    <!--<p class="text-center"><strong>{{lootname}}</strong></p>-->
+    <div class="col-sm-8 text-center">
+      <div id="loot">
+        <img id='lootPic' class="loot" src="{{imgPath}}" alt="Loot Box">
+      </div>
+    </div>
+
+    <button id=lootButton (click)="lootRoll()">Claim Loot</button>
+    <div class="col-sm-2 blank">
+    </div>
+  </div>
+    <div class="col-sm-2 blank">
+    </div>
+  <div class="col-sm-8 text-center" *ngIf="tokens < 1">
+    <h1>You are currently out of tokens. Come back when you have more.</h1>
+  </div>
+  </div>
+  <div class="col-sm-2 blank">
+  </div>
+</div>
+</body>
+</html>
+
+

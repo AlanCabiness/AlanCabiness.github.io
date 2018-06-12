@@ -1,0 +1,110 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<nav id="navbar">
+  <img src="../assets/homepage/rpgLogo2.png" height="75" routerLink="/homepage"/>
+
+  <div class="box">
+    <div *ngIf="user | async; then authenticated else notyet">
+
+    </div>
+  </div>
+
+  <!-- IF the person is not logged in yet shows this -->
+  <ng-template #notyet class="box">
+    <button (click)="signInWithGoogle()" >
+      New User
+    </button>
+    <button (click)="esignInWithGoogle()" >
+      Existing User
+    </button>
+  </ng-template>
+
+
+  <!-- IF the person is logged in shows this -->
+  <ng-template #authenticated class="box">
+    <div *ngIf="user | async as user">
+      <p>Howdy, {{ user.displayName }}</p>
+      <img [src]="user.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width="50px">
+      <!--<p class="text-truncate">UID: {{ user.uid }}</p>-->
+      <!--<p class="text-truncate">UID: {{ user.uid }}</p>-->
+      <button class="button" (click)="logout()">Logout</button>
+    </div>
+  </ng-template>
+  <a routerLink="/dashboard">Play</a>
+</nav>
+<script>
+
+</script>
+
+
+<div class="bgimg-1">
+  <div class="caption">
+
+  </div>
+</div>
+
+
+<div class="bgimg-2">
+  <div class="caption">
+    <span class="strokedHeading">ABOUT</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div class="section">
+    <p style="font-size: 20px">RPGains was created for one reason. To help you get fit.<br>
+      We know that motivation can be one of the hardest parts of going to the gym and repeatedly going back.
+      What we've set out to do is create another reason for you to go to the gym, track your fitness, and reach your
+      goals.
+      RPGains is a game-based aide to your workout. It provides a simple way to track your workout, progress, and goals,
+      and rewards you for your persistence.
+      By giving incentives for going to gym, as well as meeting your calorie goals, and increasing your strength
+      training, users may strive towards a healthier
+      lifestyle, and a stronger body.
+    </p>
+  </div>
+</div>
+<!--
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+  </div>
+</div>
+-->
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="strokedHeading">HOW IT WORKS</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div class="section">
+    <p style="font-size: 20px;">
+      After a workout, you simply log into RPGains (with your Google Account), and track your exercise. We know that
+      just making it to the gym can the most impactful on your health, and we reward your character with half of the
+      daily maximum experience points for doing so. We also want to help you track your weight lost, weight lifted, and
+      calories consumed so when those numbers improve from your last check-in, we reward with extra experience points.
+      Each time you work out, you gain a token for our loot box system so you can equip you character with the finest
+      equipment. We also have bonuses for Google Fit users, and when they take 10,000 or more steps in a single day,
+      they can earn some extra tokens.
+    </p>
+  </div>
+</div>
+
+<div class="bgimg-4">
+  <div class="caption">
+    <span class="strokedHeading">CONTACT US</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div class="section">
+    <p style="font-size: 20px;">
+      Any issues, email us: support@RPGains.xyz
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+
+</div>
