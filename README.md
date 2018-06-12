@@ -1,12 +1,11 @@
 <h1>How to install and run RPGains</h1>
 Getting RPGains on your local machine is not very hard. 
 You will require node, npm, and @angular/cli.<br>
-<b>1.</b> Clone our repository (git clone https://github.com/AlanCabiness/improved-octo-potato.git) on your machine <br>
-<b>2.</b> cd into improved-octo-potato (cd improved-octo-potato)<br>
-<b>3.</b> cd into rpgains (cd rpgains)<br>
-<b>4.</b> Run npm install (npm install)<br>
-<b>5.</b> After the install completes simply serve the site (ng serve -o)<br>
-<b>6.</b> You should have a fully functional RPGains application on your machine <br>
+<b>1.</b> Clone our repository (git clone https://github.com/AlanCabiness/RPGains) on your machine <br>
+<b>2.</b> cd into rpgains (cd rpgains)<br>
+<b>3.</b> Run npm install (npm install)<br>
+<b>4.</b> After the install completes simply serve the site (ng serve -o)<br>
+<b>5.</b> You should have a fully functional RPGains application on your machine <br>
 
 <h3>Live version of the site running at: https://rpgains360.herokuapp.com/</h3>
 
