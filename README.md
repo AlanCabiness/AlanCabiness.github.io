@@ -63,3 +63,4 @@ Following are some screens shwoing the functionality of the Google Fit user dahs
 This project was created by Alan Cabiness, Giancarlo Cianelli, Julio Robert Giron, and Alejandro Vicuna.
 Project created as part of course CSC 360 at DePaul University
 
+Original repository located <a href="https://github.com/AlanCabiness/improved-octo-potato">here</a>
